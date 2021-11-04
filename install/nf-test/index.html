@@ -27,7 +27,14 @@ fi
 GITHUB_REPO_URL=https://github.com/${GITHUB_ORG}/${GITHUB_REPO}
 GITHUB_RELEASE_URL=${GITHUB_REPO_URL}/releases/download/v${VERSION}/${APP_NAME}-${VERSION}.tar.gz
 
+# download and extract tar.gz file
 echo "Downloading ${APP_NAME} ${VERSION} from ${GITHUB_RELEASE_URL}..."
 download ${GITHUB_RELEASE_URL} | tar -xz
+
+# move jar file to .nf-test folder
+APP_HOME=${HOME}/.${APP_NAME}
+mkdir -p ${APP_HOME}
+mv ${APP_NAME}.jar ${APP_HOME}/${APP_NAME}.jar
+
 echo ""
 echo "Done."
