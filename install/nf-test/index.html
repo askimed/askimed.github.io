@@ -34,7 +34,7 @@ download ${GITHUB_RELEASE_URL} | tar -xz
 # move jar file to .nf-test folder
 APP_HOME=${HOME}/.${APP_NAME}
 mkdir -p ${APP_HOME}
-mv ${APP_NAME}.jar ${APP_HOME}/${APP_NAME}.jar
+mv -f ${APP_NAME}.jar ${APP_HOME}/${APP_NAME}.jar
 
 echo ""
 echo "Done."
